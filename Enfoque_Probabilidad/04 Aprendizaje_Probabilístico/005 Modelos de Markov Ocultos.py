@@ -1,65 +1,91 @@
 import numpy as np
-from hmmlearn import hmm
 
-# -----------------------------------------
-# 1. DEFINICION DE LOS COMPONENTES DEL HMM
-# -----------------------------------------
+# --------------------------------------------
+# MODELO DE MARKOV OCULTO (HMM) - desde cero
+# Tema: Introducción a la I.A.
+# Subtema: Enfoque Probabilístico - Aprendizaje Probabilístico
+# --------------------------------------------
 
-# Definimos los estados ocultos (emociones)
+# --------------------------------------------
+# 1. DEFINIMOS LOS ELEMENTOS DEL MODELO
+# --------------------------------------------
+
+# Estados ocultos (emociones): no se observan directamente
 estados = ['feliz', 'triste']
-n_estados = len(estados)
+numero_estados = len(estados)
 
-# Definimos los posibles simbolos que observamos
+# Observaciones posibles (frases que oímos)
 observaciones_posibles = ['jaja', 'meh', 'buuu']
-n_observaciones = len(observaciones_posibles)
+numero_observaciones = len(observaciones_posibles)
 
-# Codificamos las observaciones como números para el modelo
+# Diccionario para convertir frases a índices
 diccionario_observaciones = {'jaja': 0, 'meh': 1, 'buuu': 2}
 
-# -----------------------------------------
-# 2. CREAMOS EL MODELO HMM
-# -----------------------------------------
+# Secuencia de frases que escuchamos
+frases_observadas = ['jaja', 'meh', 'meh', 'buuu', 'jaja']
+secuencia_observada = [diccionario_observaciones[frase] for frase in frases_observadas]
 
-modelo = hmm.MultinomialHMM(n_components=n_estados, random_state=42)
+# Probabilidad de empezar en cada estado
+prob_inicio = [0.6, 0.4]  # más probable comenzar feliz
 
-# Definimos las probabilidades de inicio para cada estado
-modelo.startprob_ = np.array([0.6, 0.4])  # más probable que comience feliz
+# Matriz de transición entre estados
+# Ejemplo: de feliz a feliz o triste
+prob_transicion = [
+    [0.7, 0.3],  # desde feliz
+    [0.4, 0.6]   # desde triste
+]
 
-# Matriz de transiciones entre estados (de uno a otro)
-modelo.transmat_ = np.array([
-    [0.7, 0.3],  # de feliz a feliz o triste
-    [0.4, 0.6],  # de triste a feliz o triste
-])
+# Matriz de emisión (probabilidad de decir una frase dado el estado)
+# Cada fila es un estado, cada columna una frase
+prob_emision = [
+    [0.6, 0.3, 0.1],  # feliz: más probable decir "jaja"
+    [0.1, 0.4, 0.5]   # triste: más probable decir "buuu"
+]
 
-# Matriz de emisiones: probabilidad de decir algo según el estado emocional
-modelo.emissionprob_ = np.array([
-    [0.6, 0.3, 0.1],  # si está feliz: alta probabilidad de decir "jaja"
-    [0.1, 0.4, 0.5],  # si está triste: más probable "buuu"
-])
+# --------------------------------------------
+# 2. ALGORITMO DE VITERBI (hecho desde cero)
+# --------------------------------------------
 
-# -----------------------------------------
-# 3. DEFINIMOS UNA SECUENCIA OBSERVADA
-# -----------------------------------------
+def viterbi(secuencia, prob_inicio, prob_transicion, prob_emision):
+    T = len(secuencia)           # longitud de la secuencia observada
+    N = len(prob_inicio)         # número de estados
+    V = np.zeros((N, T))         # matriz de probabilidades
+    camino = np.zeros((N, T), dtype=int)  # para guardar los caminos
 
-# Secuencia de frases escuchadas
-secuencia_frases = ['jaja', 'meh', 'meh', 'buuu', 'jaja']
+    # Paso 1: inicialización con la primera observación
+    for estado in range(N):
+        V[estado, 0] = prob_inicio[estado] * prob_emision[estado][secuencia[0]]
+        camino[estado, 0] = 0
 
-# Convertimos las frases a números
-secuencia_numerica = np.array([[diccionario_observaciones[frase]] for frase in secuencia_frases])
+    # Paso 2: iteración sobre el tiempo
+    for t in range(1, T):
+        for estado_actual in range(N):
+            probabilidades = []
+            for estado_anterior in range(N):
+                prob = V[estado_anterior, t-1] * prob_transicion[estado_anterior][estado_actual] * prob_emision[estado_actual][secuencia[t]]
+                probabilidades.append(prob)
+            V[estado_actual, t] = max(probabilidades)
+            camino[estado_actual, t] = np.argmax(probabilidades)
 
-# -----------------------------------------
-# 4. USAMOS EL ALGORITMO DE VITERBI
-# -----------------------------------------
+    # Paso 3: reconstruir la mejor secuencia de estados
+    estados_optimos = np.zeros(T, dtype=int)
+    estados_optimos[T-1] = np.argmax(V[:, T-1])
+    for t in range(T-2, -1, -1):
+        estados_optimos[t] = camino[estados_optimos[t+1], t+1]
 
-# El algoritmo Viterbi encuentra la secuencia de estados más probable
-log_prob, secuencia_estados = modelo.decode(secuencia_numerica, algorithm="viterbi")
+    return estados_optimos
 
-# -----------------------------------------
-# 5. MOSTRAMOS LOS RESULTADOS
-# -----------------------------------------
+# --------------------------------------------
+# 3. EJECUTAMOS Y MOSTRAMOS RESULTADOS
+# --------------------------------------------
 
+# Ejecutamos Viterbi
+estados_estimados = viterbi(secuencia_observada, prob_inicio, prob_transicion, prob_emision)
+
+# Imprimimos resultados
 print("Frases observadas:")
-print(secuencia_frases)
-print("\nSecuencia de emociones estimada (estados ocultos):")
-for i, estado in enumerate(secuencia_estados):
-    print(f"{secuencia_frases[i]} --> {estados[estado]}")
+print(frases_observadas)
+
+print("\nSecuencia estimada de estados emocionales:")
+for i, estado in enumerate(estados_estimados):
+    print(f"{frases_observadas[i]} --> {estados[estado]}")
