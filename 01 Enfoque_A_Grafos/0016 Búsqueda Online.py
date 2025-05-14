@@ -1,4 +1,32 @@
 import random
+"""
+Este programa implementa un algoritmo de búsqueda online en un grafo parcialmente desconocido.
+El grafo se construye dinámicamente y los nodos vecinos se descubren a medida que se exploran.
+Se utiliza una estrategia de búsqueda "greedy" o aleatoria para encontrar un camino desde un nodo inicial hasta un nodo objetivo.
+Clases:
+--------
+- GrafoDesconocido:
+    Representa un grafo parcialmente desconocido. Permite agregar aristas y descubrir vecinos de un nodo.
+Funciones:
+----------
+- busqueda_online(grafo, inicio, objetivo, estrategia="greedy"):
+    Realiza una búsqueda online en el grafo desde un nodo inicial hasta un nodo objetivo.
+    Parámetros:
+        - grafo (GrafoDesconocido): El grafo sobre el cual se realiza la búsqueda.
+        - inicio (str): Nodo inicial.
+        - objetivo (str): Nodo objetivo.
+        - estrategia (str): Estrategia de búsqueda ("greedy" o aleatoria).
+    Retorna:
+        - camino (list): Lista de nodos que forman el camino encontrado.
+        - costo_total (int): Costo total del camino encontrado.
+Ejemplo de uso:
+---------------
+1. Crear un grafo y agregar aristas.
+2. Ejecutar la función `busqueda_online` para encontrar un camino entre dos nodos.
+3. Imprimir el historial de exploración y el camino encontrado.
+"""
+
+
 
 # -------------------------------
 # Clase del grafo parcialmente desconocido

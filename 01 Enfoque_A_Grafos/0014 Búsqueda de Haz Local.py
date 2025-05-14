@@ -1,4 +1,25 @@
 import heapq
+"""
+Este programa implementa la búsqueda de haz local (Local Beam Search) en un grafo no dirigido. 
+El objetivo es encontrar el camino de menor costo entre un nodo inicial y un nodo objetivo, 
+explorando múltiples caminos simultáneamente y manteniendo solo los mejores k caminos en cada iteración.
+Clases:
+- Grafo: Representa un grafo no dirigido con métodos para agregar aristas y obtener vecinos de un nodo.
+Funciones:
+- calcular_costo(camino, grafo): Calcula el costo total de un camino en el grafo.
+- busqueda_haz_local(grafo, inicio, objetivo, k=2, max_iteraciones=50): Implementa el algoritmo de búsqueda de haz local.
+Parámetros de `busqueda_haz_local`:
+- grafo: Instancia de la clase Grafo que representa el grafo a explorar.
+- inicio: Nodo inicial desde donde comienza la búsqueda.
+- objetivo: Nodo objetivo al que se desea llegar.
+- k: Número de caminos que se mantienen en cada iteración (tamaño del haz).
+- max_iteraciones: Número máximo de iteraciones permitidas.
+El programa incluye un ejemplo de uso donde se crea un grafo, se definen las aristas con sus pesos, 
+y se ejecuta la búsqueda de haz local desde un nodo inicial hasta un nodo objetivo. 
+Al final, se imprime el mejor camino encontrado junto con su costo, o un mensaje indicando que no se encontró un camino.
+"""
+
+
 
 class Grafo:
     def __init__(self):

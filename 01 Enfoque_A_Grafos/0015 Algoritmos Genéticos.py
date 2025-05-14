@@ -1,4 +1,25 @@
 import random
+"""
+Este programa implementa un algoritmo genético para encontrar el camino más corto entre dos nodos en un grafo no dirigido.
+El algoritmo utiliza una población inicial de caminos generados aleatoriamente y aplica operaciones de selección, cruzamiento
+y mutación para evolucionar hacia una solución óptima.
+Clases:
+    - Grafo: Representa un grafo no dirigido con métodos para agregar aristas y obtener vecinos de un nodo.
+Funciones:
+    - calcular_costo(camino, grafo): Calcula el costo total de un camino en el grafo.
+    - generar_camino(grafo, inicio, objetivo, max_longitud): Genera un camino aleatorio desde un nodo inicial hasta un nodo objetivo.
+    - cruzar(padre1, padre2): Realiza el cruzamiento entre dos caminos para generar un nuevo camino.
+    - mutar(camino, grafo, prob_mutacion): Aplica una mutación a un camino con una probabilidad dada.
+    - algoritmo_genetico(grafo, inicio, objetivo, poblacion_size, generaciones): Implementa el algoritmo genético para encontrar el camino más corto.
+Uso:
+    1. Crear un grafo utilizando la clase `Grafo` y agregar aristas con pesos.
+    2. Llamar a la función `algoritmo_genetico` especificando el grafo, el nodo inicial, el nodo objetivo, el tamaño de la población y el número de generaciones.
+    3. El programa imprimirá el historial de soluciones y el mejor camino encontrado junto con su costo.
+Ejemplo:
+    print(f"Mejor camino encontrado: {mejor_camino} con costo: {mejor_costo}")
+"""
+
+
 
 class Grafo:
     def __init__(self):

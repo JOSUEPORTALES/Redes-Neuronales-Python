@@ -1,4 +1,7 @@
 from collections import deque
+# La librería 'collections' proporciona contenedores especializados como 'deque',
+# que es una cola de doble extremo eficiente para operaciones de inserción y eliminación
+# en ambos extremos. Aquí se utiliza para implementar las fronteras de búsqueda.
 
 # Función para reconstruir el camino completo desde inicio hasta objetivo
 def reconstruir_camino(nodo_desde_inicio, nodo_desde_objetivo):

@@ -1,4 +1,17 @@
+
+
 # Probabilidad de lluvia
+"""
+Este programa calcula la utilidad esperada de dos decisiones posibles (llevar paraguas o no llevarlo) 
+basándose en la probabilidad de lluvia y una tabla de utilidad que asigna valores a cada combinación 
+de decisión y condición climática. Finalmente, determina cuál es la mejor decisión según la utilidad 
+esperada máxima.
+Funciones principales del programa:
+1. Define las probabilidades de lluvia y no lluvia.
+2. Establece las opciones de decisión y una tabla de utilidad asociada.
+3. Calcula la utilidad esperada para cada decisión considerando las probabilidades.
+4. Muestra las utilidades esperadas y selecciona la decisión con mayor utilidad esperada.
+"""
 prob_lluvia = 0.4
 prob_no_lluvia = 1 - prob_lluvia
 

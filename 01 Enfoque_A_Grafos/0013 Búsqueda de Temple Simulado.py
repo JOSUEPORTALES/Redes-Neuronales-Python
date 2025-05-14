@@ -1,5 +1,23 @@
 import math
+"""
+Este programa implementa el algoritmo de Temple Simulado para encontrar el mejor camino en un grafo no dirigido.
+El temple simulado es un método de optimización probabilística inspirado en el proceso de recocido en metalurgia,
+que permite explorar soluciones subóptimas con el objetivo de evitar quedarse atrapado en mínimos locales.
+Clases:
+- Grafo: Representa un grafo no dirigido, donde los nodos están conectados por aristas con pesos.
+Funciones:
+- calcular_costo(camino, grafo): Calcula el costo total de un camino en el grafo.
+- generar_vecino(camino_actual, grafo): Genera un nuevo camino vecino al actual, extendiéndolo o acortándolo.
+- temple_simulado(grafo, inicio, objetivo, temperatura_inicial, enfriamiento, iteraciones): Implementa el algoritmo de Temple Simulado para encontrar el mejor camino entre dos nodos.
+Uso:
+1. Crear un grafo utilizando la clase `Grafo` y agregar aristas con pesos.
+2. Llamar a la función `temple_simulado` especificando el nodo inicial, el nodo objetivo, y los parámetros del algoritmo.
+3. El programa imprimirá el historial de soluciones exploradas y devolverá el mejor camino encontrado junto con su costo.
+"""
 import random
+
+
+
 
 class Grafo:
     def __init__(self):

@@ -1,4 +1,27 @@
+
+
 import heapq
+"""
+Este programa implementa el algoritmo de búsqueda A* (A-star), un algoritmo heurístico utilizado para encontrar el camino
+más corto desde un nodo inicial hasta un nodo objetivo en un grafo ponderado. La librería `heapq` se utiliza para manejar
+una cola de prioridad eficiente, que permite seleccionar el nodo con el menor costo total (f(n) = g(n) + h(n)) en cada
+iteración.
+Clases y funciones principales:
+- Clase `Nodo`: Representa un nodo en el grafo, almacenando su estado, costo acumulado (g(n)), heurística (h(n)),
+    costo total (f(n)), y su nodo padre para reconstruir el camino.
+- Función `reconstruir_camino`: Reconstruye el camino desde el nodo objetivo hasta el nodo inicial utilizando los nodos
+    padre.
+- Función `busqueda_a_estrella`: Implementa el algoritmo A*, explorando los nodos del grafo y utilizando una heurística
+    para guiar la búsqueda hacia el objetivo.
+Parámetros principales:
+- `inicio`: Nodo inicial desde donde comienza la búsqueda.
+- `objetivo`: Nodo objetivo al que se desea llegar.
+- `grafo`: Representación del grafo como un diccionario, donde las claves son nodos y los valores son listas de vecinos.
+- `heuristicas`: Diccionario que asigna a cada nodo un valor heurístico (estimación del costo hacia el objetivo).
+- `costos`: Diccionario que define los costos reales entre nodos conectados.
+El programa incluye un ejemplo práctico con un grafo, heurísticas y costos definidos, y busca el camino óptimo desde el
+nodo 'A' hasta el nodo 'G'. Si encuentra un camino, lo imprime; de lo contrario, indica que no se encontró camino.
+"""
 
 # Nodo con estado, costo g(n), heurística h(n), y padre
 class Nodo:

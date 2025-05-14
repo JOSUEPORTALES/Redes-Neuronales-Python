@@ -1,4 +1,21 @@
 import networkx as nx
+"""
+Este programa utiliza la biblioteca NetworkX para modelar un grafo dirigido que representa
+un conjunto de estados y decisiones posibles entre ellos. Cada nodo del grafo tiene un
+atributo de utilidad asociado, que indica el valor o beneficio de estar en ese estado.
+El programa realiza las siguientes operaciones:
+1. Crea un grafo dirigido (DiGraph) para modelar las decisiones con dirección.
+2. Agrega nodos al grafo, asignando a cada uno una utilidad específica.
+3. Define las conexiones (aristas) entre los nodos, representando las decisiones posibles.
+4. Muestra las utilidades de cada nodo en la consola.
+5. Encuentra y muestra el nodo con la mayor utilidad, junto con su valor.
+Este enfoque puede ser útil en problemas de toma de decisiones, donde se busca maximizar
+la utilidad al elegir entre diferentes opciones.
+"""
+
+
+
+
 
 # Crear un grafo dirigido (las decisiones tienen dirección)
 G = nx.DiGraph()

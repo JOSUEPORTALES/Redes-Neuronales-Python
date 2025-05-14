@@ -1,4 +1,24 @@
 import heapq
+"""
+Este programa implementa el algoritmo AO* (AND-OR Search) para encontrar el camino óptimo en un grafo que contiene nodos de tipo AND y OR. 
+El algoritmo utiliza una cola de prioridad (heap) para explorar los nodos según su costo total estimado (f(n) = g(n) + h(n)).
+Clases:
+- Nodo: Representa un nodo en el grafo con atributos como estado, tipo (AND/OR), costo acumulado, heurística, padre y costo total.
+Funciones:
+- reconstruir_camino(nodo): Reconstruye el camino desde el nodo objetivo hasta el nodo inicial utilizando los nodos padre.
+- busqueda_ao_estrella(inicio, objetivo, grafo, heuristicas): Implementa el algoritmo AO* para buscar el camino óptimo en un grafo AND-OR.
+Parámetros:
+- inicio (str): Nodo inicial desde donde comienza la búsqueda.
+- objetivo (str): Nodo objetivo al que se desea llegar.
+- grafo (dict): Representación del grafo en forma de diccionario. Cada clave es un nodo y su valor es una lista de tuplas (tipo, costo, vecino).
+- heuristicas (dict): Diccionario que asigna un valor heurístico a cada nodo.
+Retorno:
+- Si se encuentra un camino al nodo objetivo, devuelve una lista con el camino óptimo desde el nodo inicial hasta el objetivo.
+- Si no se encuentra un camino, devuelve None.
+Ejemplo de uso:
+- El programa incluye un ejemplo de grafo y heurísticas, y busca el camino óptimo desde el nodo 'A' hasta el nodo 'E'.
+"""
+
 
 # Nodo con estado, costo g(n), heurística h(n), padre y tipo (AND/OR)
 class Nodo:

@@ -1,4 +1,26 @@
+
+
 import heapq
+"""
+Este programa implementa una búsqueda informada utilizando el algoritmo de Greedy Best-First Search.
+La búsqueda informada utiliza una heurística para priorizar la exploración de nodos que parecen más prometedores
+para alcanzar el objetivo. La librería `heapq` se utiliza para manejar una cola de prioridad que organiza los nodos
+según su valor heurístico.
+Clases:
+- Nodo: Representa un nodo en el grafo con su estado, referencia al nodo padre y su valor heurístico.
+Funciones:
+- reconstruir_camino(nodo): Reconstruye el camino desde el nodo inicial hasta el nodo objetivo.
+- busqueda_informada(inicio, objetivo, grafo, heuristicas): Implementa el algoritmo de búsqueda informada
+    utilizando una cola de prioridad para explorar los nodos.
+Variables principales:
+- grafo: Representa el grafo como un diccionario donde las claves son nodos y los valores son listas de vecinos.
+- heuristicas: Diccionario que asigna un valor heurístico a cada nodo.
+- inicio: Nodo inicial desde donde comienza la búsqueda.
+- objetivo: Nodo objetivo que se desea alcanzar.
+Ejemplo de uso:
+El programa busca un camino desde el nodo 'A' hasta el nodo 'G' en el grafo definido, utilizando las heurísticas
+proporcionadas. Si encuentra un camino, lo imprime; de lo contrario, indica que no se encontró un camino.
+"""
 
 # Clase para representar un nodo con heurística y referencia al padre
 class Nodo:

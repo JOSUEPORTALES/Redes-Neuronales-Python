@@ -1,4 +1,31 @@
 import random
+"""
+Este programa implementa la búsqueda tabú para encontrar el camino más corto en un grafo no dirigido.
+La búsqueda tabú es una técnica de optimización que utiliza una memoria tabú para evitar ciclos y
+explorar soluciones más prometedoras. El programa incluye las siguientes funcionalidades:
+1. Clase `Grafo`:
+    - Permite crear un grafo no dirigido.
+    - Métodos para agregar aristas y obtener vecinos de un nodo.
+2. Función `busqueda_tabú`:
+    - Implementa el algoritmo de búsqueda tabú.
+    - Encuentra el camino más corto desde un nodo inicial hasta un nodo objetivo.
+    - Utiliza una memoria tabú para evitar caminos ya explorados.
+    - Registra un historial de soluciones intermedias para análisis.
+3. Ejemplo de uso:
+    - Se crea un grafo con nodos y aristas.
+    - Se ejecuta la búsqueda tabú para encontrar el camino más corto entre dos nodos.
+    - Se imprime el historial de soluciones y el mejor camino encontrado.
+Parámetros principales:
+- `grafo`: Objeto de la clase `Grafo` que representa el grafo.
+- `nodo_inicio`: Nodo desde donde comienza la búsqueda.
+- `nodo_objetivo`: Nodo al que se desea llegar.
+- `iteraciones`: Número máximo de iteraciones para la búsqueda.
+- `tamano_memoria`: Tamaño máximo de la memoria tabú.
+Salida:
+- El mejor camino encontrado y su costo asociado.
+"""
+
+
 
 class Grafo:
     def __init__(self):

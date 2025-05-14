@@ -1,4 +1,26 @@
 import random
+"""
+Este programa implementa el algoritmo de Búsqueda de Ascensión de Colinas para encontrar el máximo local
+de una función objetivo. La función objetivo utilizada en este caso es f(x) = -x^2 + 5x + 2, una parábola
+invertida. El algoritmo comienza desde un punto inicial aleatorio y se mueve hacia soluciones vecinas
+que mejoren el valor de la función objetivo. Si no se encuentra una mejora, el algoritmo concluye que
+ha alcanzado un máximo local.
+Funciones:
+- funcion_objetivo(x): Calcula el valor de la función objetivo para un valor dado de x.
+- busqueda_ascension_colinas(funcion_objetivo, inicio, paso, max_iteraciones): Implementa el algoritmo
+    de Búsqueda de Ascensión de Colinas. Recibe como parámetros la función objetivo, el punto inicial,
+    el tamaño del paso y el número máximo de iteraciones.
+Parámetros de ejecución:
+- inicio: Punto inicial aleatorio entre -10 y 10.
+- paso: Tamaño del paso para explorar soluciones vecinas.
+- max_iteraciones: Número máximo de iteraciones permitidas.
+Salida:
+- Imprime el progreso del algoritmo en cada iteración, indicando el movimiento hacia una mejor solución
+    o la detención al alcanzar un máximo local.
+- Al final, muestra la solución final encontrada y el valor correspondiente de la función objetivo.
+"""
+
+
 
 # Definir la función a maximizar (en este caso, f(x) = -x^2 + 5x + 2)
 def funcion_objetivo(x):

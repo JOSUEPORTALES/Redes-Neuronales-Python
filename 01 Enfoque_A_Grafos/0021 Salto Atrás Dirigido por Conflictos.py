@@ -2,6 +2,16 @@
 import networkx as nx  # Para trabajar con grafos
 import matplotlib.pyplot as plt  # Para graficar los grafos
 
+
+# Este programa implementa el algoritmo de Salto Atrás Dirigido por Conflictos para buscar un camino
+# desde un nodo inicial hasta un nodo objetivo en un grafo. Utiliza la biblioteca NetworkX para
+# representar y visualizar grafos, y Matplotlib para graficar los resultados. El programa incluye
+# un ejemplo de grafo dirigido, realiza la búsqueda del camino y resalta el camino encontrado en
+# la visualización del grafo.
+
+
+
+
 # Definimos una función para realizar el algoritmo de Salto Atrás Dirigido por Conflictos
 def salto_atras_conflictos(grafo, nodo_inicial, nodo_objetivo):
     """

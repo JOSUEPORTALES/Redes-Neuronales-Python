@@ -1,6 +1,10 @@
 import random
 import networkx as nx
 
+# Este programa implementa el algoritmo de mínimos conflictos para resolver problemas de satisfacción de restricciones (CSP).
+# El objetivo es asignar valores a los nodos de un grafo de manera que se minimicen los conflictos entre nodos conectados por restricciones.
+# Utiliza un enfoque iterativo donde se ajustan los valores de los nodos en conflicto hasta encontrar una solución o alcanzar un límite de iteraciones.
+
 # Importamos las librerías necesarias
 import matplotlib.pyplot as plt
 

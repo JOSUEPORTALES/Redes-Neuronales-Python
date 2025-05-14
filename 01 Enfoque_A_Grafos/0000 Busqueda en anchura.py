@@ -1,3 +1,8 @@
+# Este programa implementa el algoritmo de búsqueda en anchura (BFS) en un grafo.
+# La búsqueda en anchura es una técnica para recorrer o buscar elementos en un grafo o árbol.
+# Se utiliza una cola para explorar los nodos nivel por nivel, comenzando desde un nodo inicial.
+
+
 from collections import deque
 
 

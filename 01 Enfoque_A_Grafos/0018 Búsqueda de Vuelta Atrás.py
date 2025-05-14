@@ -1,4 +1,7 @@
 import networkx as nx
+# La biblioteca NetworkX (nx) se utiliza para la creación, manipulación y visualización de grafos y redes.
+# Proporciona herramientas para trabajar con grafos dirigidos, no dirigidos, ponderados, entre otros.
+
 
 # Importamos las bibliotecas necesarias
 import matplotlib.pyplot as plt
