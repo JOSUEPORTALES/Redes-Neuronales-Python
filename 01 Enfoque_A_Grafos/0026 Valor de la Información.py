@@ -1,4 +1,21 @@
 from collections import deque
+"""
+Este programa implementa un algoritmo de búsqueda en anchura (BFS) para encontrar un camino entre dos nodos en un grafo no dirigido.
+El grafo representa conexiones entre ciudades, y el objetivo es determinar un camino desde una ciudad inicial hasta una ciudad objetivo.
+Funciones:
+- busqueda_anchura(grafo, inicio, objetivo): Realiza la búsqueda en anchura en el grafo dado, devolviendo el camino encontrado
+    entre el nodo inicial y el nodo objetivo, o None si no existe un camino.
+- imprimir_grafo(grafo): Imprime en consola las conexiones del grafo en un formato legible.
+Variables principales:
+- grafo_ciudades: Un diccionario que define las conexiones entre ciudades.
+- ciudad_inicial: La ciudad desde donde comienza la búsqueda.
+- ciudad_objetivo: La ciudad que se desea alcanzar.
+El programa imprime el grafo, ejecuta la búsqueda en anchura y muestra el camino encontrado, si existe.
+"""
+
+
+
+
 
 # Funcion para realizar la busqueda en anchura (BFS)
 def busqueda_anchura(grafo, inicio, objetivo):

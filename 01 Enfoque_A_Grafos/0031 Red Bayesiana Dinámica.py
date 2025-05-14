@@ -1,9 +1,28 @@
+
 # Importamos las librerías necesarias
+"""
+Este programa implementa una Red Bayesiana Dinámica utilizando la librería `pgmpy`.
+Modela el clima en dos momentos de tiempo (`clima_0` y `clima_1`) y define cómo el clima
+en un día influye en el clima del día siguiente. Además, realiza inferencias sobre las
+probabilidades condicionales y visualiza la estructura de la red.
+Funciones y características principales:
+- Define una red bayesiana con dos nodos (`clima_0` y `clima_1`) y una relación causal entre ellos.
+- Especifica las tablas de probabilidad condicional (CPD) para los nodos.
+- Realiza inferencias utilizando el método de eliminación de variables (`VariableElimination`).
+- Visualiza la estructura de la red bayesiana como un grafo dirigido.
+Librerías utilizadas:
+- `pgmpy`: Para modelar y realizar inferencias en la red bayesiana.
+- `networkx`: Para crear y visualizar el grafo de la red.
+- `matplotlib`: Para graficar la estructura de la red.
+"""
 from pgmpy.models import DiscreteBayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
 import networkx as nx
 import matplotlib.pyplot as plt
+
+
+
 
 # Creamos la red bayesiana
 # En este ejemplo, modelamos el clima en dos momentos: clima_0 y clima_1

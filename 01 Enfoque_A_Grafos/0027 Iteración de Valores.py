@@ -1,6 +1,13 @@
 # Importamos librerías necesarias
 import numpy as np
 
+# Este programa implementa un entorno de aprendizaje por refuerzo basado en una cuadrícula (grafo).
+# La cuadrícula representa un espacio de estados donde cada celda es un estado.
+# Se inicializan los valores de los estados en 0 y se definen recompensas específicas para ciertos estados.
+# También se especifican los movimientos posibles dentro de la cuadrícula (arriba, abajo, izquierda, derecha).
+# Este código es la base para realizar iteraciones de valores o políticas en el contexto de aprendizaje por refuerzo.
+
+
 # Definimos el entorno como una cuadrícula de 3x3 (grafo)
 # Cada celda representa un estado. Usamos una matriz para representar los valores.
 valores = np.zeros((3, 3))  # Todos los valores iniciales son 0

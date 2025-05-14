@@ -1,5 +1,27 @@
 # Importamos librerías necesarias
+"""
+Este programa implementa el algoritmo de Iteración de Valores para resolver un Proceso de Decisión de Markov (MDP). 
+El objetivo es encontrar los valores óptimos para cada estado y la política óptima (la mejor acción a tomar en cada estado) 
+dado un conjunto de estados, acciones, transiciones, y parámetros de descuento y convergencia.
+Funciones:
+-----------
+iteracion_valores_mdp(estados, acciones, transiciones, descuento, epsilon):
+    Aplica el algoritmo de Iteración de Valores para calcular los valores óptimos de los estados y la política óptima.
+    - estados: Lista de estados del MDP.
+    - acciones: Lista de acciones disponibles.
+    - transiciones: Diccionario que define las transiciones del MDP en forma de (estado_actual, accion) -> [(probabilidad, estado_siguiente, recompensa)].
+    - descuento: Factor de descuento para recompensas futuras (valor entre 0 y 1).
+    - epsilon: Criterio de convergencia para detener el algoritmo.
+Retorna:
+    - valores: Diccionario con los valores óptimos para cada estado.
+    - politica: Diccionario con la mejor acción a tomar desde cada estado.
+El programa inicializa los valores de los estados en 0 y ejecuta el algoritmo hasta que los valores converjan 
+(según el criterio epsilon). Finalmente, imprime los valores finales de cada estado y la política óptima.
+"""
 import numpy as np
+
+
+
 
 # Definimos los estados de nuestro grafo
 estados = ['A', 'B', 'C', 'D']

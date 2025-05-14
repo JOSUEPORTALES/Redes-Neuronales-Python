@@ -1,6 +1,35 @@
 import numpy as np
+"""
+Este programa implementa un algoritmo de aprendizaje por refuerzo activo utilizando Q-learning
+para resolver un entorno representado como una rejilla de 5x5. El objetivo es que un agente
+aprenda a navegar desde una posición inicial hasta un objetivo (representado por el número 9)
+evitando obstáculos (representados por el número 1). El programa incluye las siguientes funcionalidades:
+1. Definición del entorno: Una matriz que representa la rejilla con espacios libres, obstáculos y el objetivo.
+2. Implementación del algoritmo Q-learning:
+    - Inicialización de la tabla Q para almacenar los valores de las acciones.
+    - Selección de acciones usando una política epsilon-greedy.
+    - Actualización de la tabla Q basada en las recompensas obtenidas.
+3. Visualización de la política aprendida: Muestra las mejores acciones aprendidas para cada celda.
+4. Representación del entorno como un grafo: Genera un grafo dirigido que representa las conexiones válidas
+    entre las celdas de la rejilla.
+Parámetros principales:
+- `alpha`: Tasa de aprendizaje.
+- `gamma`: Factor de descuento.
+- `epsilon`: Probabilidad de explorar en lugar de explotar.
+Funciones principales:
+- `es_valido(x, y)`: Verifica si una posición está dentro de los límites y no es un obstáculo.
+- `seleccion_accion(x, y)`: Selecciona una acción basada en la política epsilon-greedy.
+- `aprender()`: Ejecuta el proceso de aprendizaje Q-learning.
+- `mostrar_politica()`: Muestra la política aprendida en la rejilla.
+- `mostrar_grafo()`: Genera y muestra un grafo del entorno.
+El programa finaliza mostrando la política aprendida y el grafo del entorno.
+"""
 import matplotlib.pyplot as plt
 import networkx as nx
+
+
+
+
 
 # Definimos el entorno: una rejilla de 5x5 con algunos obstáculos
 # 0: espacio libre, 1: obstáculo, 9: objetivo (recompensa)

@@ -1,4 +1,31 @@
 import numpy as np
+"""
+Este programa implementa el algoritmo de Iteración de Políticas para resolver problemas de decisión en un entorno
+representado como un grafo en forma de cuadrícula. El objetivo es encontrar la política óptima (la mejor acción a tomar
+en cada estado) y los valores asociados a cada estado, maximizando las recompensas acumuladas.
+El programa consta de las siguientes partes principales:
+1. Definición del entorno: Se define una cuadrícula con recompensas específicas para cada celda.
+2. Evaluación de políticas: Calcula los valores de cada estado dado una política fija.
+3. Mejora de políticas: Ajusta la política para maximizar los valores de los estados.
+4. Iteración de políticas: Combina la evaluación y mejora de políticas hasta que la política sea estable (óptima).
+Funciones principales:
+- `evaluar_politica`: Evalúa los valores de los estados para una política dada.
+- `mejorar_politica`: Mejora la política basada en los valores actuales de los estados.
+- `iteracion_politica`: Ejecuta el ciclo de evaluación y mejora de políticas hasta converger.
+Parámetros clave:
+- `filas`, `columnas`: Dimensiones del entorno (cuadrícula).
+- `recompensas`: Matriz que define las recompensas para cada celda.
+- `movimientos`: Diccionario que define las posibles acciones y sus efectos en la posición.
+- `descuento`: Factor de descuento para calcular el valor presente de recompensas futuras.
+- `epsilon`: Umbral para determinar la convergencia en la evaluación de políticas.
+Resultados:
+- Imprime la política óptima (dirección a tomar en cada celda).
+- Imprime los valores finales asociados a cada estado.
+"""
+
+
+
+
 
 # Tamaño del entorno (grafo en forma de cuadrícula)
 filas, columnas = 3, 3

@@ -1,4 +1,29 @@
 import numpy as np
+"""
+Este programa implementa un modelo de decisión parcialmente observable (POMDP) para un agente que opera en un entorno incierto.
+El agente tiene una creencia inicial sobre su estado, que se actualiza a medida que toma acciones y recibe observaciones.
+El flujo principal del programa es el siguiente:
+1. Se define un conjunto de estados, acciones y observaciones posibles.
+2. Se especifican las matrices de transición y observación que modelan el comportamiento del entorno.
+3. El agente comienza con una creencia inicial uniforme sobre los estados.
+4. Se implementan funciones para:
+    - Actualizar la creencia del agente con base en una observación recibida.
+    - Predecir la nueva creencia tras realizar una acción.
+    - Seleccionar una acción basada en una política simple.
+5. Se simula un paso del POMDP:
+    - El agente selecciona una acción según su política.
+    - Se predice la nueva creencia tras la acción.
+    - Se recibe una observación y se actualiza la creencia del agente.
+Funciones principales:
+- `actualizar_creencia(creencia, observacion)`: Actualiza la creencia del agente con base en una observación recibida.
+- `predecir_creencia(creencia, accion)`: Predice la nueva creencia del agente tras realizar una acción.
+- `politica(creencia)`: Define una política simple para seleccionar acciones basadas en la creencia actual.
+El programa ilustra cómo un agente puede razonar y tomar decisiones en un entorno incierto utilizando un modelo POMDP.
+"""
+
+
+
+
 
 # Estados posibles (el agente no sabe en cuál está exactamente)
 estados = ['bueno', 'regular', 'malo']

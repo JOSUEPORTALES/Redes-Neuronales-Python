@@ -1,6 +1,27 @@
 import numpy as np
+"""
+Este programa implementa un enfoque de aprendizaje por refuerzo pasivo en un entorno de rejilla 5x5.
+El objetivo es calcular los valores de los estados (V(s)) utilizando una política fija y evaluar
+la función de valor hasta la convergencia. El entorno incluye obstáculos y un objetivo con recompensa.
+Funciones principales:
+- `es_valido(x, y)`: Comprueba si una posición está dentro de los límites del entorno y no es un obstáculo.
+- `evaluacion_politica()`: Realiza la evaluación de política iterativa para calcular los valores de los estados.
+- `mostrar_rejilla()`: Muestra en consola los valores calculados para cada estado en la rejilla.
+- `mostrar_grafo()`: Genera y visualiza un grafo que representa el entorno, donde los nodos son las celdas
+    y las aristas representan las conexiones válidas entre ellas.
+Parámetros importantes:
+- `entorno`: Matriz que define el entorno (0: espacio libre, 1: obstáculo, 9: objetivo).
+- `gamma`: Factor de descuento para las recompensas futuras.
+- `recompensa_objetivo`: Recompensa asignada al estado objetivo.
+El programa utiliza librerías como `numpy` para cálculos matriciales, `matplotlib` para visualización,
+y `networkx` para la representación del grafo del entorno.
+"""
 import matplotlib.pyplot as plt
 import networkx as nx
+
+
+
+
 
 # Definimos el entorno: una rejilla de 5x5 con algunos obstáculos
 # 0: espacio libre, 1: obstáculo, 9: objetivo (recompensa)
